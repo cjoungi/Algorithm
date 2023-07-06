@@ -1,17 +1,16 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
 
 public class Main{
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-       
-        StringTokenizer st = new StringTokenizer(br.readLine());
         
-        long A = Long.parseLong(st.nextToken());
-        long B = Long.parseLong(st.nextToken());
-        long C = Long.parseLong(st.nextToken());
+        String[] arr = br.readLine().split(" ");
+        
+        long A = Long.parseLong(arr[0]);
+        long B = Long.parseLong(arr[1]);
+        long C = Long.parseLong(arr[2]);
         
         System.out.println(A+B+C);
         
