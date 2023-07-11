@@ -12,10 +12,10 @@ public class Main{
         int m = Integer.parseInt(st.nextToken()); // 현재 분
         int t = Integer.parseInt(br.readLine()); // 요리 시간(분)
 
-        int finH = (h+(m+t)/60)%24; //요리 끝나는 시각
-        int finM = ((m+t)%60); //요리 끝나는 분
+        int finH = h+(m+t)/60; //요리 끝나는 시각
+        int finM = (m+t)%60; //요리 끝나는 분
         
-        System.out.println(finH+" "+finM);
+        System.out.println(finH>=24? finH-24+" "+finM : finH+" "+finM);
      
     }
 }
