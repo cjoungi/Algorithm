@@ -1,18 +1,26 @@
-import java.util.Scanner;
-
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.IOException;
+ 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
  
-		int num = sc.nextInt();
-		sc.close();
- 
-		for (int i = 1; i <= num; i++) {
-			for (int j = 1; j <= num; j++) {
-                if(j<=num-i) System.out.print(" ");
-                else System.out.print("*");
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = Integer.parseInt(br.readLine());
+		br.close();
+		
+		for (int i = 1; i <= N; i++) {
+			for (int j = 1; j <= N; j++) {
+				if(j<=N-i) bw.write(" ");
+				else bw.write("*");
 			}
-			System.out.println();
+			bw.write("\n");
 		}
+		bw.flush();
+		bw.close();
 	}
 }
