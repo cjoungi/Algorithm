@@ -5,6 +5,7 @@ import java.io.IOException;
 public class Main{
     public static void main(String args[]) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+        StringBuilder sb = new StringBuilder();
         String S = br.readLine();
         
         int[] arr = new int[26]; // 알파벳의 개수를 저장하는 배열
@@ -15,7 +16,8 @@ public class Main{
         }
         
         for(int j=0;j<26;j++){
-            System.out.print(arr[j] + " ");
+            sb.append(arr[j]).append(" ");
         }
+        System.out.println(sb);
     }
 }
