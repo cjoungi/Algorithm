@@ -13,9 +13,13 @@ public class Main{
             int price = Integer.parseInt(br.readLine());
             
             if(i <= 3){ // 햄버거
-                hamMin = Math.min(hamMin,price);
+                if(price < hamMin){
+                    hamMin = price;
+                }
             }else{ //음료
-                bevMin = Math.min(bevMin,price);
+                if(price < bevMin){
+                    bevMin = price;
+                }
             }
         }
         System.out.println(hamMin + bevMin - 50);
