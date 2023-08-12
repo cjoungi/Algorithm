@@ -13,16 +13,10 @@ public class Main{
             }
                 
             for(int i=0;i<str.length();i++){
-                switch(str.charAt(i)){
-                     case 'a':
-                     case 'e':
-                     case 'i':
-                     case 'o':
-                     case 'u':
-                        count++;
-                        break;
-                     default:
-                        break;
+                char c = str.charAt(i);
+                
+                if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u'){
+                    count++;
                 }
             }
             System.out.println(count);
