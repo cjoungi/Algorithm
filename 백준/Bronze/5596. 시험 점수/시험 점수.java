@@ -9,6 +9,7 @@ public class Main{
         for(int i=0;i<4;i++) S += sc.nextInt();
         for(int i=0;i<4;i++) T += sc.nextInt();
             
-        System.out.println(Math.max(S,T));
+        if(S >= T) System.out.println(S);
+        else System.out.println(T);
     }
 }
