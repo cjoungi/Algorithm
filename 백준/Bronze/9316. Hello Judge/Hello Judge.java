@@ -1,20 +1,19 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class Main{
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         
         int N = Integer.parseInt(br.readLine());
 
         for(int i=1;i<=N;i++){
-            bw.write("Hello World, Judge " + i + "!" + "\n");
+            sb.append("Hello World, Judge ").append(i).append("!");
+            sb.append("\n");
         }
-        bw.flush();
-        bw.close();
+        System.out.println(sb);
     }
 }
