@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -9,15 +8,18 @@ public class Main{
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        int N = Integer.parseInt(br.readLine());
+        Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
         
-        int[] arr = new int[N];
+        int min = 1000001;
+        int max = -1000001;
         
-        for(int i=0;i<N;i++){
-            arr[i] = Integer.parseInt(st.nextToken());
+        while(st.hasMoreTokens()){
+            int val = Integer.parseInt(st.nextToken());
+            
+            if(min > val) min = val;
+            if(max < val) max = val;
         }
-        Arrays.sort(arr);
-        System.out.println(arr[0] + " " + arr[N-1]);
+        System.out.println(min + " " + max);
     }
 }
