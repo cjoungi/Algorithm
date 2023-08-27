@@ -1,32 +1,30 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class Main{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
         
-        int[] coord_x = new int[3];
-        int[] coord_y = new int[3];
+        String[] coord_1 = br.readLine().split(" ");
+        String[] coord_2 = br.readLine().split(" ");
+        String[] coord_3 = br.readLine().split(" ");
         
-        for(int i = 0; i < 3; i++){
-            coord_x[i] = sc.nextInt();
-            coord_y[i] = sc.nextInt();
-        }
-
-        int x = 0, y = 0;
+        String x, y;
         
-        if(coord_x[0] == coord_x[1]){
-            x = coord_x[2];
-        }else if(coord_x[0] == coord_x[2]){
-            x = coord_x[1];
+        if(coord_1[0].equals(coord_2[0])){
+            x = coord_3[0];
+        }else if(coord_2[0].equals(coord_3[0])){
+            x = coord_1[0];
         }else{
-            x = coord_x[0];
+            x = coord_2[0];
         }
-        if(coord_y[0] == coord_y[1]){
-            y = coord_y[2];
-        }else if(coord_y[0] == coord_y[2]){
-            y = coord_y[1];
+        if(coord_1[1].equals(coord_2[1])){
+            y = coord_3[1];
+        }else if(coord_2[1].equals(coord_3[1])){
+            y = coord_1[1];
         }else{
-            y = coord_y[0];
+            y = coord_2[1];
         }
         System.out.println(x + " " + y);
     }
