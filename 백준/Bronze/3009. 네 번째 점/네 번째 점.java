@@ -3,29 +3,31 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int x4 = 0, y4 = 0;
         
-        int x1 = sc.nextInt();
-        int y1 = sc.nextInt();
-        int x2 = sc.nextInt();
-        int y2 = sc.nextInt();
-        int x3 = sc.nextInt();
-        int y3 = sc.nextInt();
+        int[] coord_x = new int[3];
+        int[] coord_y = new int[3];
         
-        if(x1 == x2){
-            x4 = x3;
-        }else if(x1 == x3){
-            x4 = x2;
-        }else if(x2 == x3){
-            x4 = x1;
+        for(int i = 0; i < 3; i++){
+            coord_x[i] = sc.nextInt();
+            coord_y[i] = sc.nextInt();
         }
-        if(y1 == y2){
-            y4 = y3;
-        }else if(y1 == y3){
-            y4 = y2;
-        }else if(y2 == y3){
-            y4 = y1;
+
+        int x = 0, y = 0;
+        
+        if(coord_x[0] == coord_x[1]){
+            x = coord_x[2];
+        }else if(coord_x[0] == coord_x[2]){
+            x = coord_x[1];
+        }else{
+            x = coord_x[0];
         }
-        System.out.println(x4 + " " + y4);
+        if(coord_y[0] == coord_y[1]){
+            y = coord_y[2];
+        }else if(coord_y[0] == coord_y[2]){
+            y = coord_y[1];
+        }else{
+            y = coord_y[0];
+        }
+        System.out.println(x + " " + y);
     }
 }
