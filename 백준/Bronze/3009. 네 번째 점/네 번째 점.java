@@ -1,14 +1,19 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class Main{
     public static void main(String args[]) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
         
-        String[] coord_1 = br.readLine().split(" ");
-        String[] coord_2 = br.readLine().split(" ");
-        String[] coord_3 = br.readLine().split(" ");
+        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+        
+        String[] coord_1 = {st.nextToken(),st.nextToken()};
+        st = new StringTokenizer(br.readLine()," ");
+        String[] coord_2 = {st.nextToken(),st.nextToken()};
+        st = new StringTokenizer(br.readLine()," ");
+        String[] coord_3 = {st.nextToken(),st.nextToken()};
         
         String x, y;
         
