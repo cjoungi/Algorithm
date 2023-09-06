@@ -1,19 +1,25 @@
-import java.util.Scanner;
-
-public class Main {
-	public static void main(String args[]) {
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+import java.io.IOException;
  
-		Scanner sc = new Scanner(System.in);
-		
-		int N = sc.nextInt();
-		int M = sc.nextInt();
+public class Main {
+	public static void main(String args[]) throws IOException {
+ 
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+        
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
 		
 		int[] arr = new int[N];
 		
 		for(int a=1;a<=M;a++) {
-			int i = sc.nextInt();
-			int j = sc.nextInt();
-			int k = sc.nextInt();
+            st = new StringTokenizer(br.readLine());
+            
+			int i = Integer.parseInt(st.nextToken());
+			int j = Integer.parseInt(st.nextToken());
+			int k = Integer.parseInt(st.nextToken());
 			
 			for(int b=i-1;b<j;b++) {
 				arr[b] = k;
@@ -22,5 +28,7 @@ public class Main {
 		for(int num : arr) {
 			System.out.print(num + " ");
 		}
+		br.close();
 	}
+ 
 }
